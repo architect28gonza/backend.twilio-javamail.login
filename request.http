@@ -1,0 +1,37 @@
+
+
+# POST http://localhost:8080/backend.services.war/api/v1/
+# Content-Type: application/json
+
+# {
+#     "username": "angel",
+#     "password": "123"
+# }
+
+
+# POST http://localhost:8080/backend.services.war/api/v1/create
+# Content-Type: application/json
+
+# {
+#     "username": "angel",
+#     "password": "123",
+#     "role": "USER",
+#     "email": "angel.gonzalez@email.com",
+#     "phone": "+573148487338"
+# }
+
+# +12549442913
+
+# POST http://localhost:8080/backend.services.war/api/v1/change
+# Content-Type: application/json
+
+# {
+#     "username": "angel",
+#     "emailOrPhoneNumber": "+573148487338",
+#     "emailOrPhone": false
+# }
+
+
+GET http://localhost:8080/backend.services.war/api/v1/private
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmdlbCIsImlhdCI6MTcwOTgzNzE0MCwiZXhwIjoxNzA5ODgwMzQwfQ.k-hKizRxKXrPQ5wXxPxeNEzVVZ4xCEBDB4JX42BA3dk

@@ -1,0 +1,7 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="deployment.backend.services.ear-1.ear.backend.services.ejb-1.jar" />
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

@@ -1,0 +1,8 @@
+com\application\lib\dto\MessageDto.class
+com\application\lib\constants\PropertiesEmailUtil.class
+com\application\lib\dto\UserDto.class
+com\application\lib\dto\ChangePasswordDto.class
+com\application\lib\dto\UserLoginDto.class
+com\application\lib\constants\PropertiesSmsUtil.class
+com\application\lib\dto\MessageDto$MessageDtoBuilder.class
+com\application\lib\constants\MessageSend.class
