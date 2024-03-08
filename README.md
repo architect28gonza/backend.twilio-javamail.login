@@ -111,3 +111,101 @@ El proyecto depende de las siguientes bibliotecas:
 
 - maven-compiler-plugin: Configurado para usar JDK 11.
 - maven-war-plugin: Para empaquetar la aplicación en formato WAR.
+
+
+
+
+# Documentación API de Backend Services
+### Autenticación
+#### Login
+```
+POST http://localhost:8080/backend.services.war/api/v1/
+```
+#### Headers:
+```
+Content-Type: application/json
+```
+#### Body:
+```
+{
+  "username": "<username>",
+  "password": "<password>"
+}
+```
+Descripción: Este endpoint autentica a los usuarios verificando sus credenciales. En caso de éxito, devuelve un token JWT que debe usarse para acceder a endpoints protegidos.
+
+#### Respuestas:
+
+- 200 OK: Autenticación exitosa.
+- 401 Unauthorized: Credenciales inválidas.
+
+
+# Gestión de Usuarios
+#### Crear Usuario
+```
+POST http://localhost:8080/backend.services.war/api/v1/create
+```
+
+### Headers:
+```
+Content-Type: application/json
+```
+### Body:
+```
+{
+  "username": "username",
+  "password": "password",
+  "role": "USER",
+  "email": "example@email.com",
+  "phone": "+57xxxxxxxxx"
+}
+```
+Descripción: Registra un nuevo usuario con los datos proporcionados. Necesario para nuevos usuarios que deseen acceder al sistema.
+
+#### Respuestas:
+. 201 Created: Usuario creado exitosamente.
+. 400 Bad Request: Datos de usuario inválidos o incompletos.
+
+# Cambiar Email o Teléfono
+```
+POST http://localhost:8080/backend.services.war/api/v1/change
+```
+####  Headers:
+```
+Content-Type: application/json
+```
+#### Body:
+```
+{
+  "username": "username",
+  "emailOrPhoneNumber": "+57xxxxxxxxxx",
+  "emailOrPhone": false
+}
+```
+Descripción: Permite a un usuario cambiar su email o número de teléfono. El campo emailOrPhone determina si se cambia el email (true) o el teléfono (false).
+
+#### Respuestas:
+- 200 OK: Cambio realizado exitosamente.
+- 400 Bad Request: Datos de solicitud inválidos.
+
+# Acceso a Recursos Privados
+#### Acceder a Información Privada
+```
+GET http://localhost:8080/backend.services.war/api/v1/private
+```
+#### Headers:
+```
+Content-Type: application/json
+Authorization: Bearer <token_jwt>
+```
+Descripción: Proporciona acceso a información privada del usuario. Requiere autenticación mediante JWT obtenido en el login.
+
+#### Respuestas:
+-  200 OK: Acceso concedido.
+-  401 Unauthorized: Token inválido o expirado.
+
+Esta documentación básica debería ofrecer a los desarrolladores la información necesaria para comenzar a trabajar con la API. Es importante mantener actualizada la documentación a medida que la API evoluciona y agregar detalles adicionales según sea necesario, como descripciones de errores específicos y ejemplos de respuestas.
+
+
+
+
