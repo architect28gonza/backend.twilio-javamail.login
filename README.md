@@ -78,4 +78,36 @@ Este proyecto hace uso de varias dependencias importantes, que incluyen:
 ## Uso
 Este módulo EJB puede ser desplegado en un contenedor EJB/Jakarta EE, como parte de una aplicación empresarial más grande. Configura las dependencias y servicios necesarios antes de desplegar el módulo.
 
+# Backend Services WAR
+### Descripción
 
+Este proyecto es un componente de backend desarrollado en Java, empaquetado como un archivo WAR (Web Application Archive). Está diseñado para ser desplegado en servidores compatibles con Jakarta EE 10.0.0. Utiliza Maven como sistema de gestión de proyectos.
+Requisitos
+
+- JDK 11
+- Maven
+- Un servidor de aplicaciones que soporte Jakarta EE 10.0.0, como Tomcat, WildFly, o Payara.
+
+##### Construir y Desplegar
+##### Compilar el proyecto
+Para compilar el proyecto, ejecute el siguiente comando en el directorio raíz del proyecto:
+```java
+mvn clean install
+```
+Esto generará el archivo **.war** en el directorio **target**
+
+#### Desplegar el archivo WAR
+El archivo WAR generado puede ser desplegado en cualquier servidor de aplicaciones compatible con Jakarta EE 10.0.0. Consulte la documentación de su servidor de aplicaciones para obtener instrucciones específicas de despliegue.
+Dependencias
+
+El proyecto depende de las siguientes bibliotecas:
+
+- Jakarta EE API: Proporciona la API de Jakarta EE para el desarrollo de aplicaciones empresariales.
+- Backend Services EJB: Un módulo EJB que forma parte de los servicios backend.
+- Lombok: Una biblioteca que ayuda a reducir la verbosidad del código Java, proporcionando anotaciones para el manejo de getters, setters, y más.
+- Vavr: Ofrece estructuras de datos y herramientas de control funcional para mejorar el desarrollo de aplicaciones en Java.
+
+#### Plugins de Maven
+
+- maven-compiler-plugin: Configurado para usar JDK 11.
+- maven-war-plugin: Para empaquetar la aplicación en formato WAR.
